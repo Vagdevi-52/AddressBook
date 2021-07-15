@@ -4,16 +4,16 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class AddressBookMain 
+public class AddressBookMain
 {
 
-	    public static Scanner sc = new Scanner(System.in);
+	 public static Scanner sc = new Scanner(System.in);
 	    private static AddressBook addressBook = new AddressBook();
 	    public Map<String,AddressBook> addressBookListMap = new HashMap<>();
 
 	    public void addAddressBook(String bookName)
 	    {
-	        new AddressBookMain();
+	        AddressBookMain addBookMain = new AddressBookMain();
 	        boolean flag = true;
 
 	        while(flag) 
@@ -38,27 +38,27 @@ public class AddressBookMain
 	                    System.out.println("Enter the Person First name to edit details: ");
 	                    String personName = sc.next();
 
-	                    boolean listEdited = ((AddressBook) addressBook).editContactDetails(personName);
-	                    if (listEdited) 
+	                    boolean listEdited = addressBook.editContactDetails(personName);
+	                    if (listEdited)
 	                    {
 	                        System.out.println("List Edited Successfully");
-	                    } 
+	                    }
 	                    else
 	                    {
 	                        System.out.println("List Cannot be Edited");
 	                    }
-	                    ( addressBook).display();
+	                    addressBook.display();
 	                    break;
 
 	                case 3:
 	                    System.out.println("Enter the Contact to be deleted:");
 	                    String firstName = sc.next();
 	                    boolean listDeleted = addressBook.deleteContact(firstName);
-	                    if (listDeleted) 
+	                    if (listDeleted)
 	                    {
 	                        System.out.println("Deleted Contact from the List");
 	                    } 
-	                    else 
+	                    else
 	                    {
 	                        System.out.println("List Cannot be Deleted");
 	                    }
@@ -75,9 +75,9 @@ public class AddressBookMain
 
 
 
-	    public static void main(String[] args) 
+	    public static void main(String[] args)
 	    {
-	        System.out.println("Welcome to the Address Book");
+	        System.out.println("Welcome to the Address Book Management System using Java Stream");
 	        AddressBookMain addressBookMain = new AddressBookMain();
 	        boolean flag =true;
 	        while(flag)
@@ -88,7 +88,7 @@ public class AddressBookMain
 	            int option = sc.nextInt();
 	            switch (option)
 	            {
-	                case 1: 
+	                case 1:
 	                {
 	                    System.out.println("Enter the Name of Address Book: ");
 	                    String addressBookName = sc.next();
@@ -110,5 +110,7 @@ public class AddressBookMain
 	                }
 	            }
 	        }
+
+
 	    }
 	}
