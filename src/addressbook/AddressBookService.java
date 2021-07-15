@@ -1,16 +1,20 @@
 package addressbook;
 
+
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public class AddressBook
+public class AddressBookService
 {
 
 	HashMap<String, LinkedList<Contact>> addressBooks = new HashMap<>();
 	LinkedList<Contact> allContacts = new LinkedList<Contact>();
 	Scanner scanner = new Scanner(System.in);
 
+	/**
+	 * Method to add contacts
+	 */
 	public Contact addContact()
 	{
 		Contact contact = new Contact();
@@ -31,13 +35,16 @@ public class AddressBook
 		System.out.println("Enter Book name to which you have to add contact");
 		String bookName = scanner.next();
 
+		// checking book already exist
 		if (addressBooks.containsKey(bookName))
 		{
+			// if exist then add contact to list
 			LinkedList<Contact> contactList = addressBooks.get(bookName);
 			addContactToExsistingBook(contact, bookName, contactList);
 		}
-		else 
+		else
 		{
+			// creating a new book and list
 			allContacts.add(contact);
 			addressBooks.put(bookName, allContacts);
 			System.out.println("New book created and Contact Added Sucessfully");
@@ -45,11 +52,18 @@ public class AddressBook
 
 		return contact;
 	}
-	public boolean editContact(String phoneNumber)
+
+	/**
+	 * Method to Edit contact using unique phoneNumber
+	 * 
+	 * @param phoneNumber
+	 * @return
+	 */
+	public boolean editContact(String phoneNumber) 
 	{
-		for (Contact contact : allContacts)
+		for (Contact contact : allContacts) 
 		{
-			if (contact.getPhonenumber() == phoneNumber) 
+			if (contact.getPhonenumber() == phoneNumber)
 			{
 				System.out.println("Enter First Name");
 				String firstName = scanner.next();
@@ -72,7 +86,13 @@ public class AddressBook
 		return operationStatus(false);
 	}
 
-	public boolean deleteContact(String phoneNumber)
+	/**
+	 * Method to Delete contact using unique phoneNumber
+	 * 
+	 * @param phoneNumber
+	 * @return
+	 */
+	public boolean deleteContact(String phoneNumber) 
 	{
 
 		for (Contact contact : allContacts)
@@ -85,74 +105,82 @@ public class AddressBook
 		}
 		return operationStatus(false);
 	}
+
+	/**
+	 * Method to Display the Contact Details
+	 */
 	public void displayContacts(LinkedList<Contact> contactList)
 	{
-		for (Contact contact : contactList) 
+		for (Contact contact : contactList)
 		{
 			System.out.println(contact);
 		}
 	}
 
-	public void displayContact() 
+	public void displayContact()
 	{
-		for (String bookName : addressBooks.keySet())
+		for (String bookName : addressBooks.keySet()) 
 		{
 			System.out.println(bookName);
 			LinkedList<Contact> contactList = addressBooks.get(bookName);
 			displayContacts(contactList);
 		}
 	}
+
+	/**
+	 * Method to check the status of operation whether it is done properly or not
+	 * 
+	 * @param status
+	 * @return
+	 */
 	private static boolean operationStatus(boolean status)
 	{
-		if (status) 
-		{
+		if (status) {
 			System.out.println("Contact Updated Successfully");
-		}
-		else 
-		{
+		} else {
 			System.out.println("Contact not found");
 		}
 		return status;
 	}
 
+	// check Duplicate using name
 	private void addContactToExsistingBook(Contact contact, String bookName, LinkedList<Contact> contactList) {
 		boolean isAlreadyExsist = false;
-		for (Contact searchContact : contactList) 
-		{
-			if (searchContact.getFirstname().equals(contact.getFirstname()))
-			{
+		for (Contact searchContact : contactList) {
+			if (searchContact.getFirstname().equals(contact.getFirstname())) {
 				isAlreadyExsist = true;
 				break;
 			}
 		}
-		if (!(isAlreadyExsist))
-		{
+		if (!(isAlreadyExsist)) {
 			contactList.add(contact);
 			addressBooks.put(bookName, contactList);
 			System.out.println("New Contact Added Sucessfully");
-		} 
-		else
-		{
+		} else {
 			System.out.println("Contact already exsist");
 		}
 	}
+
+	// method to search multiple person in city and state
 	public int searchPerson(String searchKey)
 	{
 		int count = 0;
 		for (String bookName : addressBooks.keySet())
 		{
 			LinkedList<Contact> contactList = addressBooks.get(bookName);
-			for (Contact contact : contactList) 
+			for (Contact contact : contactList)
 			{
-				if (contact.getCity().equals(searchKey) || contact.getState().equals(searchKey))
+				if (contact.getCity().equals(searchKey) || contact.getState().equals(searchKey)) 
 				{
 					System.out.println(contact.getFirstname() + "" + contact.getLastname());
 					count++;
 				}
 			}
 		}
-		return count;
+		return count; 
 	}
+
+	// method to view person in address book
 	public void viewPerson(String viewKey)
 	{
 		for (String bookName : addressBooks.keySet())
@@ -160,11 +188,11 @@ public class AddressBook
 			LinkedList<Contact> contactList = addressBooks.get(bookName);
 			for (Contact contact : contactList)
 			{
-				if (contact.getCity().equals(viewKey) || contact.getState().equals(viewKey)) 
+				if (contact.getCity().equals(viewKey) || contact.getState().equals(viewKey))
 				{
 					System.out.println(contact);
 				}
 			}
 		}
 	}
-}     
+}
