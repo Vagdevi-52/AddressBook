@@ -1,7 +1,6 @@
 package addressbook;
 
-
-public class Contact 
+public class Contact
 {
 
 	String firstname;
@@ -25,23 +24,21 @@ public class Contact
 		this.email = email;
 	}
 
-
 	public Contact()
 	{
-	
 	}
 
-   public String getFirstname()
-   {
+	public String getFirstname()
+	{
 		return firstname;
 	}
 
-	public void setFirstname(String firstname)
+	public void setFirstname(String firstname) 
 	{
 		this.firstname = firstname;
 	}
 
-	public String getLastname()
+	public String getLastname() 
 	{
 		return lastname;
 	}
@@ -51,12 +48,12 @@ public class Contact
 		this.lastname = lastname;
 	}
 
-	public String getCity() 
+	public String getCity()
 	{
 		return city;
 	}
 
-	public void setCity(String city)
+	public void setCity(String city) 
 	{
 		this.city = city;
 	}
@@ -66,12 +63,12 @@ public class Contact
 		return state;
 	}
 
-	public void setState(String state)
+	public void setState(String state) 
 	{
 		this.state = state;
 	}
 
-	public int getZipcode()
+	public int getZipcode() 
 	{
 		return zipcode;
 	}
@@ -91,19 +88,19 @@ public class Contact
 		this.phonenumber = phonenumber;
 	}
 	
-	public String getEmail()
+	public String getEmail() 
 	{
 		return email;
 		
 	}
 	
-	public void setEmail(String email)
+	public void setEmail(String email) 
 	{
 		this.email = email;
 	}
 
 	@Override
-	public String toString() 
+	public String toString()
 	{
 		return "Contact [firstname=" + firstname + ", lastname=" + lastname + ", city=" + city + ", state="
 				+ state + ", zipcode=" + zipcode + ", phonenumber=" + phonenumber + ",email="+email+"]";
