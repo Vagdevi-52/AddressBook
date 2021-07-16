@@ -35,7 +35,7 @@ public class AddressBookService
 		System.out.println("Enter Book name to which you have to add contact");
 		String bookName = scanner.next();
 
-		// checking book already exist
+		// check the  book if  already exist
 		if (addressBooks.containsKey(bookName))
 		{
 			// if exist then add contact to list
@@ -44,7 +44,7 @@ public class AddressBookService
 		}
 		else
 		{
-			// creating a new book and list
+			// create  a new book and list
 			allContacts.add(contact);
 			addressBooks.put(bookName, allContacts);
 			System.out.println("New book created and Contact Added Sucessfully");
@@ -161,8 +161,7 @@ public class AddressBookService
 		}
 	}
 
-	// method to search multiple person in city and state
-	public int searchPerson(String searchKey)
+	public int searchPerson(String searchKey) // method to search multiple person in city or state.
 	{
 		int count = 0;
 		for (String bookName : addressBooks.keySet())
@@ -179,9 +178,7 @@ public class AddressBookService
 		}
 		return count; 
 	}
-
-	// method to view person in address book
-	public void viewPerson(String viewKey)
+	public void viewPerson(String viewKey) //method to view person in the address book.
 	{
 		for (String bookName : addressBooks.keySet())
 		{
