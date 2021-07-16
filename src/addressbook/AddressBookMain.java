@@ -35,7 +35,7 @@ public class AddressBookMain
 					boolean updated = contact.editContact(phoneNumber);	
 					if(updated)
 					{
-						System.out.println("Contact Updated.");
+						System.out.println("Contact was  Updated.");
 					}
 					else
 					{
@@ -48,11 +48,11 @@ public class AddressBookMain
 					 boolean status = contact.deleteContact(phoneNumberToDel);
 					 if(status)
 						{
-							System.out.println("Contact Deleted Successfully");
+							System.out.println("Contact got  Deleted Successfully");
 						}
 						else
 						{
-							System.out.println("Contact not found");
+							System.out.println("Contact was  not found");
 						}
 					 break;
 				case 4:	
@@ -75,7 +75,7 @@ public class AddressBookMain
 					System.out.println("Total Contacts are : "+count+ " in "+ searchKeyForCount);
 					break;
 				default:
-					System.out.println("You just Quit");
+					System.out.println(" just Quit");
 					System.exit(0);
 			}
 		}
