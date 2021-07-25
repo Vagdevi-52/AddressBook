@@ -1,7 +1,7 @@
 package addressbook;
 
-
-public class Contact {
+public class Contact
+{
 
 	String firstname;
 	String lastname;
@@ -12,7 +12,7 @@ public class Contact {
 	String email;
 	
 	public Contact(String firstname, String lastname, String city, String state, int zipcode,
-			String phonenumber,String email)
+			String phonenumber,String email) 
 	{
 		super();
 		this.firstname = firstname;
@@ -25,28 +25,27 @@ public class Contact {
 	}
 
 
-	public Contact()
+	public Contact() 
 	{
-	 
 	}
 
 
-	public String getFirstname()
+	public String getFirstname() 
 	{
 		return firstname;
 	}
 
-	public void setFirstname(String firstname)
+	public void setFirstname(String firstname) //set first name.
 	{
 		this.firstname = firstname;
 	}
 
-	public String getLastname()
+	public String getLastname() 
 	{
 		return lastname;
 	}
 
-	public void setLastname(String lastname) 
+	public void setLastname(String lastname) //set last name.
 	{
 		this.lastname = lastname;
 	}
@@ -56,17 +55,17 @@ public class Contact {
 		return city;
 	}
 
-	public void setCity(String city)
+	public void setCity(String city) //set city.
 	{
 		this.city = city;
 	}
 
-	public String getState()
+	public String getState() 
 	{
 		return state;
 	}
 
-	public void setState(String state)
+	public void setState(String state) //set the state.
 	{
 		this.state = state;
 	}
@@ -76,34 +75,34 @@ public class Contact {
 		return zipcode;
 	}
 
-	public void setZipcode(int zipcode) 
+	public void setZipcode(int zipcode) //set zipcode.
 	{
 		this.zipcode = zipcode;
 	}
 
-	public String getPhonenumber()
+	public String getPhonenumber() 
 	{
 		return phonenumber;
 	}
 
-	public void setPhonenumber(String phonenumber)
+	public void setPhonenumber(String phonenumber)//set phone number.
 	{
 		this.phonenumber = phonenumber;
 	}
 	
-	public String getEmail()
+	public String getEmail() 
 	{
 		return email;
 		
 	}
 	
-	public void setEmail(String email)
+	public void setEmail(String email) //set email.
 	{
 		this.email = email;
 	}
 
 	@Override
-	public String toString()
+	public String toString() 
 	{
 		return "Contact [firstname=" + firstname + ", lastname=" + lastname + ", city=" + city + ", state="
 				+ state + ", zipcode=" + zipcode + ", phonenumber=" + phonenumber + ",email="+email+"]";
