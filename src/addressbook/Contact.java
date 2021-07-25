@@ -1,5 +1,6 @@
 package addressbook;
 
+
 public class Contact
 {
 
@@ -65,7 +66,7 @@ public class Contact
 		return state;
 	}
 
-	public void setState(String state) //set the state.
+	public void setState(String state) //set state.
 	{
 		this.state = state;
 	}
@@ -85,7 +86,7 @@ public class Contact
 		return phonenumber;
 	}
 
-	public void setPhonenumber(String phonenumber)//set phone number.
+	public void setPhonenumber(String phonenumber) //set phone number.
 	{
 		this.phonenumber = phonenumber;
 	}
